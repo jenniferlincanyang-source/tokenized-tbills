@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0e14;
+  --bg-card: #111820;
+  --bg-elevated: #161d28;
+  --border: #252d3a;
+  --text: #e6edf5;
+  --text-muted: #8b9cb3;
+  --accent: #c9a227;
+  --accent-dim: #a68b1f;
+  --accent-glow: rgba(201, 162, 39, 0.25);
+  --success: #2d9d64;
+  --success-bg: rgba(45, 157, 100, 0.12);
+  --error: #e5534b;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply m-0 font-sans bg-bg text-[var(--text)] leading-relaxed antialiased;
+  }
+  #root {
+    @apply min-h-screen;
+  }
+  h1, h2, h3 {
+    @apply font-display font-semibold;
+  }
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(201, 162, 39, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 162, 39, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out forwards;
+}
